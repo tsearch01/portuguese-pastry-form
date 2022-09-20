@@ -1,0 +1,25 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string" translate="true">Add New Portuguese Pastry</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">portuguese_pastry_edit/form/index</item>
+            </item>
+        </item>
+    </argument>
+    <columns name="portuguese_pastry_entity_columns">
+        <actionsColumn name="actions" class="PortuguesePastry\Form\Ui\Component\Listing\Column\Actions" sortOrder="70">
+            <settings>
+                <indexField>portuguese_pastry_entity_id</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

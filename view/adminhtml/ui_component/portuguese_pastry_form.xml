@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+         <item name="js_config" xsi:type="array">
+             <item name="provider" xsi:type="string">portuguese_pastry_form.portuguese_pastry_form_data_source</item>
+             <item name="deps" xsi:type="string">portuguese_pastry_form.portuguese_pastry_form_data_source</item>
+         </item>
+         <item name="label" xsi:type="string" translate="true">Portuguese Pastry Information</item>
+         <item name="layout" xsi:type="array">
+             <item name="type" xsi:type="string">tabs</item>
+         </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="PortuguesePastry\Form\Block\Adminhtml\SaveButton"/>
+        </buttons>
+    </settings>
+    <dataSource name="portuguese_pastry_form_data_source">
+         <argument name="dataProvider" xsi:type="configurableObject">
+             <argument name="class" xsi:type="string">PortuguesePastry\Form\Model\Ui\PortuguesePastry\DataProvider</argument>
+             <argument name="name" xsi:type="string">portuguese_pastry_form_data_source</argument>
+             <argument name="primaryFieldName" xsi:type="string">portuguese_pastry_entity_id</argument>
+             <argument name="requestFieldName" xsi:type="string">id</argument>
+         </argument>
+         <argument name="data" xsi:type="array">
+             <item name="js_config" xsi:type="array">
+                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+             </item>
+         </argument>
+         <settings>
+            <submitUrl path="portuguese_pastry_edit/form/save"/>
+         </settings>
+    </dataSource>
+    <fieldset name="portuguese_pastry">
+         <argument name="data" xsi:type="array">
+             <item name="config" xsi:type="array">
+                 <item name="label" xsi:type="string" translate="true">Pastry Information</item>
+             </item>
+         </argument>
+        <field name="portuguese_pastry_entity_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">portuguese_pastry</item>
+                </item>
+            </argument>
+        </field>
+        <field name="name" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">portuguese_pastry</item>
+                </item>
+            </argument>
+            <settings>
+                <label>Name</label>
+                <dataType>text</dataType>
+                <visible>true</visible>
+            </settings>
+        </field>
+        <field name="flavour" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">PortuguesePastry\Form\Model\Config\Source\FlavourOptions</item>
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">portuguese_pastry</item>
+                </item>
+            </argument>
+            <settings>
+                <label>Flavour</label>
+                <dataType>select</dataType>
+                <visible>true</visible>
+            </settings>
+        </field>
+        <field name="tastiness">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Tastiness</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">portuguese_pastry</item>
+                </item>
+            </argument>
+        </field>
+        <field name="originality">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Originality</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">portuguese_pastry</item>
+                </item>
+            </argument>
+        </field>
+        <field name="allergens">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">PortuguesePastry\Form\Model\Config\Source\AllergensOptions</item>
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Allergens</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">portuguese_pastry</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>
